@@ -1,7 +1,7 @@
 const WebSocket = require('ws')
 const wss = new WebSocket.Server({port: 5555})
 
-const INTERVALMS = 1000
+const INTERVALMS = () => Math.random() * 1000
 
 console.log('starting WS server')
 
@@ -10,7 +10,7 @@ const sendStock = ws => () => {
     const stockPrice = 70 + (Math.random() * 30)
     console.log(`sending ${stockPrice}`)
     ws.send(stockPrice)
-    setTimeout(sendStock(ws), INTERVALMS)
+    setTimeout(sendStock(ws), INTERVALMS())
   } catch(e) {
     console.log('client disconnected')
     ws.close()
