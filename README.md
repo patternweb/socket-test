@@ -6,6 +6,24 @@ Test websocket servers
 
 `yarn`
 
+###  nginx
+
+####  Ubuntu Xenial
+
+https://certbot.eff.org/#ubuntuxenial-nginx
+
+```
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-nginx
+
+sudo certbot --nginx
+```
+
+Add websockets info from nginx.txt, (replace 👾 with your DOMAIN)
+
 ##  Running
 
 `yarn run twitter` Sends live tweets filtered by keyword (must rename credentials.js.template to credentials.js)
